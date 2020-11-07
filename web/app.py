@@ -10,7 +10,7 @@ def hello_whale():
 
 @app.route('/test')
 def test():
-    return 'Something to test here'
+    return render_template("test.html") 
 
 @app.route('/health')
 def heathy():
