@@ -2,11 +2,17 @@
 from flask import Flask, render_template, url_for
  
 app = Flask(__name__)
-   
+
+count = 0 
+
 @app.route('/')
 def hello_whale():
-    return render_template("index.html")
-
+    global count
+    if count < 5:
+        count += 1
+        return render_template("index.html")
+    else:
+        return "Record not found", 400
 @app.route('/test')
 def test():
     return render_template("test.html") 
