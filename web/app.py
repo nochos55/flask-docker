@@ -16,5 +16,5 @@ def heathy():
     return 'I am Healthy!'
 
 if __name__ == '__main__':
-    app.run(debug=True,host="0.0.0.0", ssl_context=('certs/https.cert', 'certs/https.key'))
+    app.run(debug=True,host='0.0.0.0')
     
