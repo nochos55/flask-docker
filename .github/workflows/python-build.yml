@@ -30,7 +30,7 @@ jobs:
             nightmar39/flask-docker
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=GITHUB_HEAD_REF
+            type=sha
       -
         name: Docker Login
         uses: docker/login-action@v1
