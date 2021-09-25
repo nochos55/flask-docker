@@ -20,7 +20,6 @@ jobs:
       ## to checkout the existing code in the repository
       -
         name: Set Vars
-        id: vars
         run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
       -
         uses: actions/checkout@v2
@@ -35,4 +34,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: nightmar39/flask-docker:${{SHORT_SHA}}
+          tags: nightmar39/flask-docker:$MY_TAG
+        env: 
+          MY_TAG: ${{SHORT_SHA}}
